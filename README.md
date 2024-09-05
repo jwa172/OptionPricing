@@ -10,9 +10,10 @@ This project demonstrates the implementation of pricing European call options us
 
 To run the notebook, you will need to have Python installed, along with the following libraries:
 
-- `numpy`: For numerical computations.
-- `scipy`: For scientific and mathematical functions.
-- `matplotlib`: For plotting and visualisation.
+- `numpy`
+- `scipy`
+- `matplotlib`
+- `pandas`
 
 ## References
 
