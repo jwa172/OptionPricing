@@ -1,6 +1,6 @@
 # Project Overview
 
-This project demonstrates the implementation of pricing European call options using two distinct price dynamics: **Geometric Brownian Motion (GBM)** and **Variance Gamma (VG)** models. The focus is on computational methods rooted in Fourier Transform and Fast Fourier Transform (FFT) techniques, guided by the influential paper *"Option Valuation Using the Fast Fourier Transform"* by Carr and Madan (1999).
+This project demonstrates the implementation of pricing European call options using two distinct price dynamics: **Geometric Brownian Motion (GBM)** and **Variance Gamma (VG)** models. The focus is on computational methods rooted in Fourier Transform and Fast Fourier Transform (FFT) techniques, guided by the influential paper *"Option Valuation Using the Fast Fourier Transform"* by Carr and Madan (1999) in an easy-to-follow, exposition style.
 
 ## File Structure
 
