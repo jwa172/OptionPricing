@@ -1,0 +1,153 @@
+
+\label{Valuation Approaches}
+
+\subsection{Laplace transform inversion to the Asian call price approach}
+
+A big advance in Asian option valuation was brought by the work of Geman and Yor in 1993 \cite{geman}, further reinforced by the works of Carr and Schröder \cite{carr} and Dufresne \cite{dufresne}.
+The approach first applies the following transformation to the risk-neutral pricing formula given by equation \eqref{eq:3} (considering only \(t= 0\) for simplicity),
+$$V_0=\frac{e^{-rT}}{T} \cdot \frac{4 S(0)}{\sigma^2} \cdot V^{(\nu)}(h, q), \quad V^{(\nu)}(h, q)=\tE\left[\left(A_h^{(\nu)}-q\right)\right],$$
+\[
+A^{(\nu)}(x) = \int_0^x e^{2\left(\nu t+\tW\right)}  dt, \quad
+V^{(\nu)}(x, y) = \tE\left(A^{(\nu)}(x)-y\right)^{+},
+\]
+where 
+$$h = \frac{\sigma^2 T}{4} \quad \text { and } \quad q = \frac{K T \sigma^2}{4 S(0)}.$$
+This step permits an explicit formula for the Laplace transform of \(V^{(\nu)}(h, q)\) to be determined. That is, 
+$$
+\mathcal{L}\left\{V^{(\nu)}(h, q)\right\}(\lambda, q, v)=\frac{(2 q)^{1-\beta}}{2 \lambda(\alpha+1) \Gamma(\beta)} \int_0^1 e^{-\frac{u}{2 q}} u^{\beta-2}(1-u)^{\alpha+1} du,
+$$
+where
+\[
+\gamma = \sqrt{2 \lambda+\nu^2}, \quad \alpha = \frac{\gamma+\nu}{2}, \quad \beta = \frac{\gamma-\nu}{2},
+\]
+for every \(\lambda>\max \{0,2(\nu+1)\}\).
+Then the final solution to the Asian call option is given in terms of the inverse Laplace transform,
+$$V_0=\frac{e^{-rT}}{T} \cdot \frac{4 S(0)}{\sigma^2} \cdot \mathcal{L}^{-1} \left\{\mathcal{L}\left\{V^{(\nu)}\right\}\right\} (h) = \frac{e^{-rT}}{T} \cdot \frac{4 S(0)}{\sigma^2} \cdot f(h),$$
+where \(f(h)\) is now approximated using some numerical inversion techniques.
+One such method, the Talbot algorithm, is outlined by Horvath and Medvegyev \cite{nummethods} as the following,
+$$f(h) \approx \hat{f}(h, M) = \frac{2}{5 h} \sum_{k=0}^{M-1} \operatorname{Re}\left\{\gamma_k \mathcal{L}\left(\frac{\delta_k}{h}\right)\right\},$$
+where
+$$\delta_0 = \frac{2 M}{5}, \quad \delta_k = \frac{2 \pi k}{5}\left(\cot \left(\frac{k\pi}{M}\right)+i\right),$$
+$$\gamma = \frac{1}{2} e^{\delta_0}, \quad \gamma_k = \left[1+\frac{k\pi i}{M}\left(1+\cot ^2\left(\frac{k\pi}{M}\right)\right)-i \cot \left(\frac{k\pi}{M}\right)\right] e^{\delta_k}, $$
+and \(M\) is a chosen parameter of the algorithm.
+% Horvath and Medvegyev further elaborate that this algorithm (among others) exhibit convergence issues for small values of \(\sigma^2 T\) due to inversion complications that arise from the inherent numerical characteristics of the Laplace transform presented by Geman and Yor.
+
+\subsection{Laplace transform to the Asian option PDE approach}
+
+A different approach that also utilises the Laplace transform is expounded by Elshegmani and Ahmad \cite{laplacePDE}, providing a direct solution to the Asian option PDE given by equation \eqref{eq:6}. This proceeds by simplifying the three-dimensional PDE into a two-dimensional ODE via a Laplace transform and is then solved analytically.
+By the following change of variables,
+\[
+    v(t, S(t), Y(t)) = S(t) f(t, \xi(t)), \quad \xi(t) = \frac{1}{S(t)} \left( K - \frac{Y(t)}{T}\right).
+\]
+Equation \eqref{eq:6} is reduced to
+\begin{equation}
+    \frac{\partial f}{\partial t}-\left(\frac{1}{T}+r \xi (t)\right) \frac{\partial f}{\partial \xi}+\frac{1}{2} \sigma^2 \xi^2(t) \frac{\partial^2 f}{\partial \xi^2}=0, \quad f(T, \xi(T)) = \left(-\xi(T)\right)^+. \label{eq:7}
+\end{equation}
+The analytical solution for equation \eqref{eq:7} when \(\xi(t) \leq 0\) is provided by Rogers and Shi \cite{rogers1995asian},
+\[
+f(t, \xi(t))=\frac{1}{r T}\left(1-e^{-r(T-t)}\right)-\xi(t) e^{-r(T-t)}.
+\]
+For the case when \(\xi(t) > 0\), a further change of variables \(\tau = T-t\) is applied to yield
+\[
+    \frac{\partial f}{\partial \tau}=\frac{\sigma^2}{2} \xi^2(\tau) \frac{\partial^2 f}{\partial \xi^2}-\left(\frac{1}{T}+r \xi(\tau)\right) \frac{\partial f}{\partial \xi}, \quad f(0, \xi)=0, \quad f(\tau, 0)=\frac{1}{r T}\left(1-e^{-r \tau}\right)
+\]
+followed by the Laplace transform to finally obtain the following:
+\begin{equation}
+    p \hat{f}=\frac{1}{2} \sigma^2 \xi^2 \frac{\partial^2 \hat{f}}{\partial \xi^2}-\left(\frac{1}{T}+r \xi\right) \frac{\partial \hat{f}}{\partial \xi}, \quad \hat{f}(p, 0)=\frac{1}{r T}\left(\frac{r}{p(r+p)}\right).\label{eq:10}
+\end{equation}
+The solution of equation \eqref{eq:8} is given in terms of the confluent hypergeometric function of the first kind,
+\begin{equation}
+    \hat{f}(p, \xi) =\frac{\xi^{\left(\frac{r}{\sigma^2}+\frac{1}{2} + \frac{\alpha}{2 \sigma^2}\right)} e^{(-2) / \sigma^2 T \xi} \Gamma\left(-\frac{1}{2}-\frac{r}{\sigma^2}-\frac{\alpha}{2 \sigma^2}\right)}{\left(\frac{1}{T p(r+p)}\right) \Gamma\left(\frac{\sigma^2-\alpha}{\sigma^2}\right)} \times { }_1 F_1\left(\frac{3}{2}+\frac{r}{\sigma^2}-\frac{\alpha}{2 \sigma^2}, \frac{\sigma^2-\alpha}{\sigma^2}, \frac{2}{\sigma^2 T \xi}\right),
+\end{equation}
+where \(\alpha=\sqrt{\sigma^4+4 \sigma^2(r+2 p)+4 r^2}\). Using Mellin's inversion formula \cite{mclachlan1953complex}, the final solution for the fixed strike arithmetic Asian option PDE is summarised by the following
+\[
+    V(t, S, A)=S f(\tau, \xi), \quad \tau=T-t, \quad \xi=\frac{k-\frac{A}{T}}{S},
+\]
+\[
+f(\tau, \xi) = \begin{cases}
+    \displaystyle \frac{1}{r T}\left(1-e^{-r \tau}\right)-\xi e^{-r \tau}, \quad \xi \leqslant 0, \\
+    \displaystyle \frac{1}{2 \pi i} \int_{\gamma-i \infty}^{\gamma+i \infty} \hat{f}(p, \xi) e^{\tau p} \mathrm{~d} p, \quad \xi>0,\\
+\end{cases}
+\]
+where the integration is done along the vertical line \(\operatorname{Re}(p)=\gamma\) in the complex plane such that \(\gamma\) is greater than the real part of all singularities of \(\hat{f}(p)\). Similar to the previous approach, numerical inversion methods would come to play to compute this integral.
+
+\subsection{The Monte Carlo method}
+
+The main principle of the Monte Carlo method involves repeated random sampling from a known distribution and computing the unknown expected value by averaging the generated outcomes.
+The validity of this approach presupposes the Law of Large Numbers, with the statistic converging to the true value as the number of trials increase.
+In the context of option pricing, this entails estimating the quantity $\tE[V(T)]$ by simulating the GBM stock process, calculating the payoff and averaging this value over a sufficiently high number of trials.
+
+\subsubsection{Basic Monte Carlo estimate (MCE)}
+
+To simulate the continuous-time stock path, the time interval $[0, T]$ is first discretized into $m$ points as $0 = t_1 < t_2 < ... < t_m = T$. This allows the stock path to be generated for each time step as the following:
+\begin{align*}
+\left\{S(t_j)\right\}_{j=1}^{m} & := \left\{S(0)\exp\left\{\sum_{i=1}^jX(t_j)\right\}\right\}_{j=1}^{m},\\
+X(t_i) & := \begin{cases}
+    0 & \text{if } i = 1\\
+    \left(r - \frac{\sigma^2}{2}\right)\left(t_{i}-t_{i-1}\right) + \sigma\left(\widetilde{W}(t_i) - \widetilde{W}(t_{i-1})\right) & \text{if } i = 2, ..., m,
+\end{cases}
+\end{align*}
+where $\widetilde{W}(t_i) - \widetilde{W}(t_{i-1}) \sim \mathcal{N}\left(0, \frac{T}{m-1}\right)$ under the risk-neutral measure $\tP$ for all $i=2,\dots,m$.
+Once the stock path is generated, the arithmetic mean is taken to compute the payout
+$$\widehat{V}(T) = \max \left\{\frac{1}{m} \sum_{j=1}^m S\left(t_j\right) - K, 0 \right\}.$$
+
+This process is repeated for $n$ trials to result in the respective payoffs $\{\widehat{V}_i(T)\}_{i=1}^n$. Since the sample mean is an unbiased estimator for the true mean, the price estimate converges to the true price as $n \to \infty$,
+$$
+\lim_{n \to \infty} \frac{1}{n}\sum_{i=1}^n\widehat{V}_i(T) = \tE[V(T)].
+$$
+
+There are two sources of estimation error with MCE. The first is that the generated trajectories are discretised and only provide an approximation to the continuous time trajectories required for the path-dependent payout. This error is reduced by increasing the number of timesteps $m$ in the discretisation step. The second is that the generated trajectories are based on random sampling so the results are prone to statistical fluctuations. By the LLN, this is usually resolved by choosing a sufficiently large trial number $n$. However, Horvath and Medvegyev points out the incredibly slow convergence of simulation methods \cite{nummethods}, stating that for each additional decimal digit of precision, the number of simulations must be increased by a factor of 100, rendering MCE impractical beyond the first 4-6 decimal digits of precision.
+
+For this reason, other variance reduction techniques such as the use of Antithetic and Control variates are employed to dramatically improve MCE. The following subsection elaborates on the theory of using these variates.
+
+\subsubsection{Method of Antithetic Variates estimate (AVE)}
+The method of antithetic variates reduces variance by pairing each simulated path \(\left\{S(t_j)\right\}_{j=1}^{m}\) with a negatively correlated (antithetic) path \(\left\{S^{(a)}(t_j)\right\}_{j=1}^{m}\) for each trial. The antithetic path is generated by mirroring the Brownian motion component, visualised in figure \ref{fig:figs} and explicitly given by the following,
+\begin{align*}
+\left\{S^{(a)}(t_j)\right\}_{j=1}^{m} &= \left\{S(0)\exp\left\{\sum_{i=1}^jX^{(a)}(t_j)\right\}\right\}_{j=1}^{m},\\
+X^{(a)}(t_i) &= \begin{cases}
+    0 & \text{if } i = 1\\
+    \left(r - \frac{\sigma^2}{2}\right)\left(t_{i}-t_{i-1}\right) - \sigma\left(W(t_i) - W(t_{i-1})\right) & \text{if } i = 2, ..., m.
+\end{cases}
+\end{align*}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\linewidth]{./figs/Trajectories.png}
+    \caption{\it{Original and Antithetic path trajectories with $S(0) = 100$, $r = 0.1$, $\sigma = 0.2$}}
+    \label{fig:figs}
+\end{figure}
+
+Denoting the original path payoff as \( \widehat{V}_i \) and the antithetic path payoff as \( \widehat{V}_i^{(a)} \), the new estimator for the expected payoff using antithetic variates (denoted by $\widehat{Y}_{AV}$) becomes
+\[
+\widehat{Y}_{AV} = \frac{1}{n} \sum_{i=1}^{n/2} \frac{ \widehat{V}_i + \widehat{V}_i^{(a)}}{2}.
+\]
+
+It is noted that each random sampling is used twice and only half of the original $n$ samples are required to be generated compared to the MCE. Denoting the MCE estimator as $\widehat{Y}_{MC}$, using antithetics reduce variance when
+\[
+    \text{Var} \left(\widehat{Y}_{AV}\right) = \text{Var} \left( \frac{1}{n} \sum_{i=1}^{n/2} \frac{ \widehat{V}_i + \widehat{V}_i^{(a)}}{2} \right) < \text{Var}\left(\frac{1}{n} \sum_{i=1}^{n}\hat{V}_i\right) = \text{Var}(\widehat{Y}_{MC});
+\]
+which can be reduced to the condition that
+\[
+    \text{Cov} \left(\widehat{V}_i, \widehat{V}_i^{(a)}\right) < 3 \text{Var} \left(\widehat{V}_i\right).
+\]
+Since the original and the mirrored trajectories have a low correlation, Horvath and Medvegyev states there is a substantial reduction in variance achieved through this approach \cite{nummethods}.
+
+\subsubsection{Method of Control Variates}
+
+The method of control variates reduces variance by incorporating a highly correlated variable (control variate) with a known expectation to the primary estimator. Let $Y$ be the appropriately chosen control variate for the arithmetic Asian option payoff \(\widehat{V}\).
+The control variates estimator for \( \mathbb{E}[V(T)] \) (denoted by $\widehat{Y}_{CV}$) is then defined as
+\[
+\widehat{Y}_{CV} = \sum_{i=1}^n \frac{\widehat{V}_i + c Y_i}{n},
+\]
+where \(\widehat{V}_i\) and \(Y_i\) are the \(i\)-th simulated outcomes for the Asian payoff and control variate respectively and \(c\) is a constant. The value of \(c\) is chosen to minimize the variance of this estimator, given by \cite{nummethods}
+\[
+c^* = -\frac{\text{Cov}(\widehat{V}, Y)}{\text{Var}(Y)}.
+\]
+Then the variance of $\widehat{Y}_{CV}$ is given by
+\begin{align*}
+    \text{Var} \left(\widehat{Y}_{CV} \right) = \text{Var} \left( \sum_{i=1}^n \frac{\widehat{V}_i + c^* Y_i}{n} \right) & = \frac{\text{Var} \left( \widehat{V}_i \right) + (c^*)^2 \text{Var} \left( Y_i \right) + 2c^* \text{Cov}(\widehat{V}, Y)}{n} \\
+    & = \frac{1}{n} \left( \text{Var}(\widehat{V}) - \frac{\text{Cov}(\widehat{V}, Y)^2}{\text{Var}(Y)} \right),
+\end{align*}
+which is always less than or equal to the variance of the original estimator \( \widehat{V} \). This demonstrates that the control variates method can yield substantial variance reduction if \( \widehat{V}\) and \(Y\) are sufficiently correlated.
+A natural choice for the control variate \(Y\) in the context of arithmetic Asian option pricing is the payoff of the geometric-average Asian option \cite{kemna}. 
+Geometric averages have closed-form solutions in the Black-Scholes framework, making their expected values easy to compute. Since the geometric average is also mathematically related to the arithmetic average, it serves as a suitable control variate that is closely correlated with the arithmetic Asian payoff \( \widehat{V}\). In practice, adding a “discretisation-adjusted” control variate also help correct for any approximation error arising due to the discrete time steps \( \{t_j\}_{j=0}^{m} \) used in simulations, further enhancing the accuracy \cite{nummethods}.

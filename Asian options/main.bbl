@@ -1,0 +1,328 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.2 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{shreve2004stochastic}{book}{}
+      \name{author}{1}{}{%
+        {{hash=9e110e7c548ab825117ed32cb12bdfd3}{%
+           family={Shreve},
+           familyi={S\bibinitperiod},
+           given={Steven\bibnamedelima E.},
+           giveni={S\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY; Heidelberg}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{9e110e7c548ab825117ed32cb12bdfd3}
+      \strng{fullhash}{9e110e7c548ab825117ed32cb12bdfd3}
+      \strng{bibnamehash}{9e110e7c548ab825117ed32cb12bdfd3}
+      \strng{authorbibnamehash}{9e110e7c548ab825117ed32cb12bdfd3}
+      \strng{authornamehash}{9e110e7c548ab825117ed32cb12bdfd3}
+      \strng{authorfullhash}{9e110e7c548ab825117ed32cb12bdfd3}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{isbn}{0387401016, 9780387401010}
+      \field{title}{Stochastic Calculus for Finance II: Continuous-Time Models}
+      \field{year}{2004}
+      \verb{urlraw}
+      \verb http://www.worldcat.org/search?qt=worldcat_org_all&q=0387401016
+      \endverb
+      \verb{url}
+      \verb http://www.worldcat.org/search?qt=worldcat_org_all&q=0387401016
+      \endverb
+    \endentry
+    \entry{geman}{article}{}
+      \name{author}{2}{}{%
+        {{hash=422beea08d43b93d3539bd06e304634c}{%
+           family={Geman},
+           familyi={G\bibinitperiod},
+           given={H.},
+           giveni={H\bibinitperiod}}}%
+        {{hash=c9e8ae99a6a8c1ce5d840444d9b28fb3}{%
+           family={Yor},
+           familyi={Y\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{13332a55959ff224ee16c9410bbf5196}
+      \strng{fullhash}{13332a55959ff224ee16c9410bbf5196}
+      \strng{bibnamehash}{13332a55959ff224ee16c9410bbf5196}
+      \strng{authorbibnamehash}{13332a55959ff224ee16c9410bbf5196}
+      \strng{authornamehash}{13332a55959ff224ee16c9410bbf5196}
+      \strng{authorfullhash}{13332a55959ff224ee16c9410bbf5196}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Mathematical Finance}
+      \field{title}{Asian Options, Bessel Processes and Perpetuities}
+      \field{volume}{3}
+      \field{year}{2013}
+      \field{pages}{349\bibrangedash 375}
+      \range{pages}{27}
+      \verb{doi}
+      \verb http://dx.doi.org/10.21314/JCF.1998.024
+      \endverb
+    \endentry
+    \entry{carr}{article}{}
+      \name{author}{2}{}{%
+        {{hash=8769b562d9e2ed12d5cb826068e384c9}{%
+           family={Carr},
+           familyi={C\bibinitperiod},
+           given={P.},
+           giveni={P\bibinitperiod}}}%
+        {{hash=d42a891766dd4f0511f4cf60311207a7}{%
+           family={Schröder},
+           familyi={S\bibinitperiod},
+           given={M.},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{86aad1153ed6d93c738e0ef7c905d22d}
+      \strng{fullhash}{86aad1153ed6d93c738e0ef7c905d22d}
+      \strng{bibnamehash}{86aad1153ed6d93c738e0ef7c905d22d}
+      \strng{authorbibnamehash}{86aad1153ed6d93c738e0ef7c905d22d}
+      \strng{authornamehash}{86aad1153ed6d93c738e0ef7c905d22d}
+      \strng{authorfullhash}{86aad1153ed6d93c738e0ef7c905d22d}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Theory of Probability \& Its Applications}
+      \field{number}{3}
+      \field{title}{Bessel Processes, the Integral of Geometric Brownian Motion, and Asian Options}
+      \field{volume}{48}
+      \field{year}{2004}
+      \field{pages}{400\bibrangedash 425}
+      \range{pages}{26}
+      \verb{doi}
+      \verb 10.1137/S0040585X97980543
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1137/S0040585X97980543
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1137/S0040585X97980543
+      \endverb
+    \endentry
+    \entry{dufresne}{report}{}
+      \name{author}{1}{}{%
+        {{hash=4a15a7f1aa7bfb819561916aae258680}{%
+           family={Dufresne},
+           familyi={D\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Center for Actuarial Studies, Department of Economics, University of Melbourne}%
+      }
+      \list{location}{1}{%
+        {Parkville, Australia}%
+      }
+      \strng{namehash}{4a15a7f1aa7bfb819561916aae258680}
+      \strng{fullhash}{4a15a7f1aa7bfb819561916aae258680}
+      \strng{bibnamehash}{4a15a7f1aa7bfb819561916aae258680}
+      \strng{authorbibnamehash}{4a15a7f1aa7bfb819561916aae258680}
+      \strng{authornamehash}{4a15a7f1aa7bfb819561916aae258680}
+      \strng{authorfullhash}{4a15a7f1aa7bfb819561916aae258680}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Bessel Processes and a Functional of Brownian Motion}
+      \field{type}{techreport}
+      \field{year}{2004}
+      \verb{urlraw}
+      \verb http://hdl.handle.net/11343/34342
+      \endverb
+      \verb{url}
+      \verb http://hdl.handle.net/11343/34342
+      \endverb
+    \endentry
+    \entry{nummethods}{article}{}
+      \name{author}{2}{}{%
+        {{hash=7454f53258f3fda0d6b4b0d040d05b4b}{%
+           family={Horvath},
+           familyi={H\bibinitperiod},
+           given={Akos},
+           giveni={A\bibinitperiod}}}%
+        {{hash=9e49839ed860b572045c9f1c69f9eaf8}{%
+           family={Medvegyev},
+           familyi={M\bibinitperiod},
+           given={Peter},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{75ecbf473aebd0dd3523f51ef961cf6e}
+      \strng{fullhash}{75ecbf473aebd0dd3523f51ef961cf6e}
+      \strng{bibnamehash}{75ecbf473aebd0dd3523f51ef961cf6e}
+      \strng{authorbibnamehash}{75ecbf473aebd0dd3523f51ef961cf6e}
+      \strng{authornamehash}{75ecbf473aebd0dd3523f51ef961cf6e}
+      \strng{authorfullhash}{75ecbf473aebd0dd3523f51ef961cf6e}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Mathematical Finance}
+      \field{title}{Pricing Asian Options: A Comparison of Numerical and Simulation Approaches Twenty Years Later}
+      \field{volume}{6}
+      \field{year}{2016}
+      \field{pages}{810\bibrangedash 841}
+      \range{pages}{32}
+      \verb{doi}
+      \verb 10.4236/jmf.2016.65056
+      \endverb
+    \endentry
+    \entry{laplacePDE}{article}{}
+      \name{author}{2}{}{%
+        {{hash=004c9fcfa7ece0ba1efe28748900860b}{%
+           family={Elshegmani},
+           familyi={E\bibinitperiod},
+           given={Zieneb\bibnamedelima Ali},
+           giveni={Z\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=8a78934a0182b9dcabf345671e07b975}{%
+           family={Ahmad},
+           familyi={A\bibinitperiod},
+           given={Rokiah\bibnamedelima Rozita},
+           giveni={R\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{121db39ca9fd2c63d34cf4cbb4b02b86}
+      \strng{fullhash}{121db39ca9fd2c63d34cf4cbb4b02b86}
+      \strng{bibnamehash}{121db39ca9fd2c63d34cf4cbb4b02b86}
+      \strng{authorbibnamehash}{121db39ca9fd2c63d34cf4cbb4b02b86}
+      \strng{authornamehash}{121db39ca9fd2c63d34cf4cbb4b02b86}
+      \strng{authorfullhash}{121db39ca9fd2c63d34cf4cbb4b02b86}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{ScienceAsia}
+      \field{title}{Solving an Asian option PDE via the Laplace transform}
+      \field{volume}{39S}
+      \field{year}{2013}
+      \field{pages}{67\bibrangedash 69}
+      \range{pages}{3}
+      \verb{doi}
+      \verb 10.2306/scienceasia1513-1874.2013.39S.067
+      \endverb
+      \verb{urlraw}
+      \verb https://www.scienceasia.org/2013.39S.n1/scias39S_67.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.scienceasia.org/2013.39S.n1/scias39S_67.pdf
+      \endverb
+    \endentry
+    \entry{rogers1995asian}{article}{}
+      \name{author}{2}{}{%
+        {{hash=d74ad7d6be7a8498de9b30641ddc4ff1}{%
+           family={Rogers},
+           familyi={R\bibinitperiod},
+           given={L.},
+           giveni={L\bibinitperiod}}}%
+        {{hash=0f3e0cdea592f7a95f0d93e656878cbe}{%
+           family={Shi},
+           familyi={S\bibinitperiod},
+           given={Z.},
+           giveni={Z\bibinitperiod}}}%
+      }
+      \strng{namehash}{62d9bea09c5901e8a03e5e81544152c6}
+      \strng{fullhash}{62d9bea09c5901e8a03e5e81544152c6}
+      \strng{bibnamehash}{62d9bea09c5901e8a03e5e81544152c6}
+      \strng{authorbibnamehash}{62d9bea09c5901e8a03e5e81544152c6}
+      \strng{authornamehash}{62d9bea09c5901e8a03e5e81544152c6}
+      \strng{authorfullhash}{62d9bea09c5901e8a03e5e81544152c6}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Applied Probability}
+      \field{title}{The value of an Asian option}
+      \field{volume}{32}
+      \field{year}{1995}
+      \field{pages}{1077\bibrangedash 1088}
+      \range{pages}{12}
+    \endentry
+    \entry{mclachlan1953complex}{book}{}
+      \name{author}{1}{}{%
+        {{hash=60123d3419613672da203cf6741a8e87}{%
+           family={McLachlan},
+           familyi={M\bibinitperiod},
+           given={N.\bibnamedelimi W.},
+           giveni={N\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Cambridge, UK}%
+      }
+      \list{publisher}{1}{%
+        {Cambridge University Press}%
+      }
+      \strng{namehash}{60123d3419613672da203cf6741a8e87}
+      \strng{fullhash}{60123d3419613672da203cf6741a8e87}
+      \strng{bibnamehash}{60123d3419613672da203cf6741a8e87}
+      \strng{authorbibnamehash}{60123d3419613672da203cf6741a8e87}
+      \strng{authornamehash}{60123d3419613672da203cf6741a8e87}
+      \strng{authorfullhash}{60123d3419613672da203cf6741a8e87}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Complex Variable Theory and Transform Calculus}
+      \field{year}{1953}
+    \endentry
+    \entry{kemna}{article}{}
+      \name{author}{2}{}{%
+        {{hash=de586d4def46c838c5ae043e7bcd9b6c}{%
+           family={Kemna},
+           familyi={K\bibinitperiod},
+           given={A.G.Z.},
+           giveni={A\bibinitperiod}}}%
+        {{hash=1fce5d98777e7f2ef085e180960cd284}{%
+           family={Vorst},
+           familyi={V\bibinitperiod},
+           given={A.C.F.},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{e428ea11fc9a5f5b7f4151e3e0265924}
+      \strng{fullhash}{e428ea11fc9a5f5b7f4151e3e0265924}
+      \strng{bibnamehash}{e428ea11fc9a5f5b7f4151e3e0265924}
+      \strng{authorbibnamehash}{e428ea11fc9a5f5b7f4151e3e0265924}
+      \strng{authornamehash}{e428ea11fc9a5f5b7f4151e3e0265924}
+      \strng{authorfullhash}{e428ea11fc9a5f5b7f4151e3e0265924}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Journal of Banking \& Finance}
+      \field{title}{A Pricing Method for Options Based on Average Asset Values}
+      \field{volume}{14}
+      \field{year}{1990}
+      \field{pages}{113\bibrangedash 129}
+      \range{pages}{17}
+      \verb{doi}
+      \verb http://dx.doi.org/10.1002/9783527626212
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

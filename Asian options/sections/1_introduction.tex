@@ -1,0 +1,19 @@
+
+The Asian option is a path-dependent exotic option whose payoff involves a historical average price of the underlying asset, first successfully priced in 1987 by Mark Standish and David Spaughton of Bankers Trust during their business stay in Japan.
+Due to the averaging mechanism, Asian options have lower volatility and offers greater protection against price fluctuations compared to the plain European counterparts and are prevalent in the commodities, currency and energy markets.
+We begin with the geometric Brownian motion (GBM) stock process, \(S(t)\) whose dynamics are given by
+\begin{equation}
+    d S(t)=r S(t) d t+\sigma S(t) d \widetilde{W}(t),\quad r, \sigma > 0;\label{eq:1}
+\end{equation}
+where \(\widetilde{W}(t), 0\leq t\leq T\) denotes the Brownian motion under the risk neutral measure \(\widetilde{\mathbb{P}}\).
+The payoff of the Asian call with the non-negative fixed-strike \(K\) under arithmetic averaging at time \(T\) is given by
+\begin{equation}
+    V(T) = \left(\frac{1}{T} \int_0^T S(t) d t-K\right)^{+}. \label{eq:2}
+\end{equation}
+Assuming a constant interest rate \(r\), the price for \(t \leq T\) is given by the risk-neutral pricing formula
+\begin{equation}
+    V(t)=\tilde{\mathbb{E}}\left[e^{-r(T-t)} V(T) \mid \mathcal{F}(t)\right], \quad 0 \leq t \leq T. \label{eq:3}
+\end{equation}
+However, the formula does not admit a closed form solution due to the fact that the arithmetic average is not log-normally distributed.
+As such, the option prices often rely on numerical techniques or approximation methods.
+This expository paper aims to outline the general theory of pricing the arithmetic fixed-strike Asian option along with some numerical implementations used for valuation.

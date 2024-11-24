@@ -1,0 +1,56 @@
+\documentclass{article}
+\usepackage[a4paper, total={5.8in, 10in}]{geometry}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+\usepackage{amsthm, amssymb, amsmath, amsfonts, bm}
+% \usepackage{subcaption} % Include this in your preamble
+% \usepackage[caption=false]{subfig} % To manage captions in minipage
+
+\usepackage[colorlinks=true, linkcolor=blue, urlcolor=blue, citecolor=blue, filecolor=blue]{hyperref}
+
+% \newtheorem*{corollary*}{Corollary}
+% \newtheorem*{theorem*}{Theorem}
+% \newtheorem*{remark*}{Remark}
+
+\title{Arithmetic Asian Options}
+\author{Ji Won Ahn}
+\date{}
+
+\newtheorem{question}{Question}
+\newtheorem{qpart}{Part}[question]
+\newtheorem*{solution}{Solution}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\set}[2]{ \{ #1\ |\ #2 \} }
+
+\usepackage[style=numeric,sorting=none]{biblatex}
+\addbibresource{refs.bib}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+\input{./sections/1_introduction.tex}
+
+\section{Valuation Problem for Asian Options}
+\input{./sections/2_pricing_and_hedging.tex}
+
+\section{Overview of Valuation Approaches}
+\input{./sections/3_valuation_approaches.tex}
+
+\section{Method}
+
+\section{Result}
+
+% \section{Summary}
+% \input{Summary}
+
+\newpage
+
+\printbibliography
+
+\end{document}
+
